@@ -9,13 +9,13 @@ jobs:
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4.2.2
-			  		  
-			- name: Set Up AWS CLI
-			  uses: aws-actions/configure-aws-credentials@v4.0.0
-			  with:
-				aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-				aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-				aws-region: us-east-1
+	      
+	   - name: Set Up AWS CLI
+	     uses: aws-actions/configure-aws-credentials@v4.0.0
+	     with:
+		aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+		aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+		aws-region: us-east-1
 
-			- name: Deploy to AWS
-			  run: aws s3 sync ./ s3://static-web-hosting-bucket-012345 --delete
+	   - name: Deploy to AWS
+	     run: aws s3 sync ./ s3://static-web-hosting-bucket-012345 --delete
