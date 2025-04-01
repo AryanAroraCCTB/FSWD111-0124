@@ -2,19 +2,19 @@ name: Greeting Action Workflow
 
 on: push
 
-jobs: 
-  greet:
-    runs-on:  ubuntu-latest
+jobs:
+    greet:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4.2.2
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4.2.2
 
-      - name: Set Up Node
-        uses: actions/setup-node@v4.3.0
+            - name: Set Up Node
+              uses: actions/setup-node@v4.3.0
 
-      - name: Install NPM Packages
-        run: npm install
+            - name: Install NPM Packages
+              run: npm install
 
-      - name: Greet
-        run: echo 'Hello From the Repository Workflow File'
+            - name: Greet
+              run: echo 'Hello From the Repository Workflow File'
